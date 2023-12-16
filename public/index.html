@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+         @font-face {
+            font-family: 'FuturaBold';
+            src: url('./Futura Bold.otf') format('opentype');
+        }
+        body{
+            background: linear-gradient(45deg , #0c0c0c 10%,transparent 11%, transparent 89% , #0c0c0c 90%),linear-gradient(135deg , #0c0c0c 10%,transparent 11%, transparent 89% , #0c0c0c 90%),radial-gradient(circle, transparent 25%, #000000  26%),linear-gradient(45deg, transparent 46%, #0c0c0c 47%, #0c0c0c 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #0c0c0c 47%, #0c0c0c 52%, transparent 53%);
+            background-size: 3em 3em;
+            background-color: #000000;
+            opacity: 1;
+            font-family: 'FuturaBold';
+            min-height: 100vh; 
+            margin: 0;  
+        }
+        header{
+            color:white;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 40px;
+            width: 100%;
+            height: 10%;
+            border: none;
+            backdrop-filter: blur(4px);
+            box-shadow: 0px 8px 16px 0px rgba(0, 157, 255, 0.2);
+            padding:10px;
+        }
+        .contenido{
+            margin-top: 150px;
+
+        }
+        .containerPadre{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Asegura que el contenedor padre ocupe toda la altura */
+            margin: 10px;
+        }
+       
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .input-left {
+            border: 3px solid #fff;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            text-align: center;
+            align-items: center;
+            font-family: 'FuturaBold';
+            font-size: 30px;
+            color: black;
+            height: 2.5em;
+            width: 5em;
+            
+        } 
+        .estiloMoneda {
+            display: flex; /* Usa flexbox */
+            justify-content: center; /* Centra horizontalmente */
+            border: 3px solid rgb(0, 157, 255);
+            border-radius: 0 20px 20px 0;
+            outline: none;
+            background-color: black;
+            color: rgb(0, 157, 255);
+            width: 5em;
+            font-size: 30px;
+            line-height: 2.6em; /* Iguala la altura del texto para centrar verticalmente */
+            height: 2.6em; /* Ajusta la altura */
+        }
+
+        .signoIgual{
+            color:  rgb(0, 157, 255);
+            font-size: 60px;
+            margin: 10px;
+            text-align: center;
+            align-items: center;
+        }
+        .tipoCambio{
+            color:white;
+            text-align: center;
+            align-items: center;
+            justify-content: flex-start;
+        } 
+        .arrow-icon {
+            margin-left: 5px;
+            cursor: pointer;
+            color:white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f947;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            /* padding: 12px 12px; */
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover {
+            background-color:  rgb(0, 157, 255);
+            color:white
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+      
+        .buttonContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh; 
+        }
+        .buttonStyle{
+            background-color: rgb(0, 157, 255);
+            color: white;
+            border-radius: 50px;
+            width: 10em;
+            height: 2em;
+            font-family: 'FuturaBold';
+            border: none;
+            cursor: pointer;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="title">
+        cambio$ya
+    </header>
+    <div class="contenido">
+        <div class="tipoCambio" >
+            <p>Tipo de Cambio  del dólar hoy 15/dic/2023</p> 
+            <div >
+                <span>Compra: 
+                    <strong>3.738 </strong>
+                </span>
+                <span>Venta: 
+                    <strong>3.777 </strong>
+                </span>
+            </div>
+         </div>
+         <div class="containerPadre">
+            <div class="container">
+                <input type="text" id="valorEnvio" class="input-left" placeholder="Tu envías">
+                <div class="dropdown estiloMoneda">
+                    Dólar <i class="arrow-icon far fa-caret-right"></i>
+                    <div class="dropdown-content">
+                        <a href="#">Dólar</a>
+                        <a href="#">Soles</a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="signoIgual">=</h2>
+            <div class="container">
+                <input type="text" id="valorCambio" class="input-left" placeholder="Tu recibes">
+                <div class="dropdown estiloMoneda">
+                    Soles <i class="arrow-icon far fa-caret-right"></i>
+                    <div class="dropdown-content">
+                        <a href="#">Dólar</a>
+                        <a href="#">Soles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  class="buttonContainer">
+            <button class="buttonStyle" onclick="getChange()">
+                Cambiar
+            </button>
+        </div>
+        
+    </div>
+    <script>
+
+        function getChange() {
+            let amount = document.getElementById('valorEnvio').value;
+            fetch('http://localhost:3000/api', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZGVmYXVsdCIsImlhdCI6MTcwMjY5OTIyNywiZXhwIjoxNzAyNzAyODI3fQ.2PMy2SgHlt1mIRgrWP39cuCQXGt0nkYeELbIkV77AwQ`, 
+                },
+                body: JSON.stringify({
+                        "amount" : amount,
+                        "originCurrency": "PEN",
+                        "fateCurrency": "USD"
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('valorCambio').value = data.amountExchangeRate.toFixed(2);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+    </script>
+    
+</body>
+</html>
